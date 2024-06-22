@@ -1,15 +1,15 @@
 <?php
 
-namespace VendorName\Skeleton;
+namespace Rmsramos\ChangeUser;
 
 use Filament\Contracts\Plugin;
 use Filament\Panel;
 
-class SkeletonPlugin implements Plugin
+class ChangeUserPlugin implements Plugin
 {
     public function getId(): string
     {
-        return 'skeleton';
+        return 'change-user';
     }
 
     public function register(Panel $panel): void
