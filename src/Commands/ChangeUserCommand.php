@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Rmsramos\ChangeUser\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class ChangeUserCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'change-user';
 
     public $description = 'My command';
 
