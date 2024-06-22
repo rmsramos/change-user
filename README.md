@@ -11,6 +11,7 @@ Filament plugin to change users without having to leave the panel
 ![Screenshot of Application Feature](https://raw.githubusercontent.com/rmsramos/change-user/main/arts/cover.png)
 
 </div>
+
 ## Installation
 
 You can install the package via composer:
