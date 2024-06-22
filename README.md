@@ -8,7 +8,7 @@ Filament plugin to change users without having to leave the panel
 
 <div class="filament-hidden">
 
-![Screenshot of Application Feature](https://raw.githubusercontent.com/rmsramos/change-user/main/arts/cover.jpeg)
+![Screenshot of Application Feature](https://raw.githubusercontent.com/rmsramos/change-user/main/arts/cover.png)
 
 </div>
 ## Installation
