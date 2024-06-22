@@ -10,11 +10,11 @@ use Filament\Support\Facades\FilamentAsset;
 use Filament\Support\Facades\FilamentIcon;
 use Illuminate\Filesystem\Filesystem;
 use Livewire\Features\SupportTesting\Testable;
+use Rmsramos\ChangeUser\Commands\ChangeUserCommand;
+use Rmsramos\ChangeUser\Testing\TestsChangeUser;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Rmsramos\ChangeUser\Commands\ChangeUserCommand;
-use Rmsramos\ChangeUser\Testing\TestsChangeUser;
 
 class ChangeUserServiceProvider extends PackageServiceProvider
 {
