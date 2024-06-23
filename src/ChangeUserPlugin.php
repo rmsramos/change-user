@@ -18,6 +18,8 @@ class ChangeUserPlugin implements Plugin
 
     public bool | Closure | null $showButton = null;
 
+    public string | Closure | null $setIcon = null;
+
     public function getId(): string
     {
         return 'change-user';
@@ -78,5 +80,17 @@ class ChangeUserPlugin implements Plugin
         $this->showButton = $showButton;
 
         return $this;
+    }
+
+    public function setIcon(string | Closure $setIcon = 'heroicon-o-arrow-path'): static
+    {
+        $this->setIcon = $setIcon;
+
+        return $this;
+    }
+
+    public function getIcon(): string
+    {
+        return $this->evaluate($this->setIcon) ?? 'heroicon-o-arrow-path';
     }
 }
