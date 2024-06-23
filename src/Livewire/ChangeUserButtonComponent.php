@@ -2,19 +2,19 @@
 
 namespace Rmsramos\ChangeUser\Livewire;
 
-use Livewire\Component;
 use Filament\Actions\Action;
-use Filament\Facades\Filament;
-use Illuminate\Support\Facades\Auth;
-use Filament\Forms\Contracts\HasForms;
-use Filament\Forms\Components\TextInput;
-use Filament\Notifications\Notification;
-use Rmsramos\ChangeUser\ChangeUserPlugin;
-use Filament\Actions\Contracts\HasActions;
-use Illuminate\Validation\ValidationException;
-use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Actions\Concerns\InteractsWithActions;
+use Filament\Actions\Contracts\HasActions;
+use Filament\Facades\Filament;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Concerns\InteractsWithForms;
+use Filament\Forms\Contracts\HasForms;
 use Filament\Http\Responses\Auth\Contracts\LoginResponse;
+use Filament\Notifications\Notification;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationException;
+use Livewire\Component;
+use Rmsramos\ChangeUser\ChangeUserPlugin;
 
 class ChangeUserButtonComponent extends Component implements HasActions, HasForms
 {
@@ -51,7 +51,7 @@ class ChangeUserButtonComponent extends Component implements HasActions, HasForm
             ])
             ->action(function (array $data): ?LoginResponse {
 
-                if (!Filament::auth()->attempt($this->getCredentialsFromFormData($data))) {
+                if (! Filament::auth()->attempt($this->getCredentialsFromFormData($data))) {
 
                     Notification::make()
                         ->warning()
@@ -65,7 +65,7 @@ class ChangeUserButtonComponent extends Component implements HasActions, HasForm
 
                 if (
                     ($user instanceof FilamentUser) &&
-                    (!$user->canAccessPanel(Filament::getCurrentPanel()))
+                    (! $user->canAccessPanel(Filament::getCurrentPanel()))
                 ) {
                     Filament::auth()->logout();
 
