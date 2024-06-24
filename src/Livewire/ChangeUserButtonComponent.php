@@ -21,29 +21,23 @@ class ChangeUserButtonComponent extends Component implements HasActions, HasForm
     use InteractsWithActions;
     use InteractsWithForms;
 
-    public string $icon = '';
-
-    public function mount()
+    public function changeUserloginAction()
     {
-        $this->icon = ChangeUserPlugin::get()->getIcon();
-    }
-
-    public function loginAction()
-    {
-        return Action::make('login')
-            ->icon($this->icon)
+        return Action::make('changeUserlogin')
+            ->icon(ChangeUserPlugin::get()->getIcon())
             ->iconButton()
-            ->modalHeading(__('Change user'))
+            ->tooltip(ChangeUserPlugin::get()->getTooltip())
+            ->modalHeading(ChangeUserPlugin::get()->getModalHeading())
             ->modalWidth('lg')
             ->form([
                 TextInput::make('email')
-                    ->label(__('Email'))
+                    ->label(__('change-user::modal.email'))
                     ->email()
                     ->required()
                     ->autofocus()
                     ->extraInputAttributes(['tabindex' => 1]),
                 TextInput::make('password')
-                    ->label(__('Password'))
+                    ->label(__('change-user::modal.password'))
                     ->password()
                     ->required()
                     ->extraInputAttributes(['tabindex' => 2])
@@ -90,7 +84,7 @@ class ChangeUserButtonComponent extends Component implements HasActions, HasForm
     protected function getCredentialsFromFormData(array $data): array
     {
         return [
-            'email' => $data['email'],
+            'email'    => $data['email'],
             'password' => $data['password'],
         ];
     }
