@@ -12,6 +12,14 @@ Filament plugin to change users without having to leave the panel
 
 </div>
 
+## Supported languages
+
+Change User Plugin is translated for :
+
+-   🇧🇷 Brazilian Portuguese
+-   🇺🇸 English
+-   🇪🇸 Spanish
+
 ## Installation
 
 You can install the package via composer:
@@ -44,7 +52,7 @@ public function panel(Panel $panel): Panel
 }
 ```
 
-If you would like to prevent certain users from accessing the logs resource, you should add a `showButton()` callback in the `ChangeUserPlugin` chain.
+If you would like to prevent certain users from accessing the change user, you should add a `showButton()` callback in the `ChangeUserPlugin` chain.
 
 ```php
 use Rmsramos\ChangeUser\ChangeUserPlugin;
@@ -59,6 +67,50 @@ public function panel(Panel $panel): Panel
 }
 ```
 
+You can swap out the modal heading used by updating the `setModalHeading()`  value.
+
+```php
+use Rmsramos\ChangeUser\ChangeUserPlugin;
+
+public function panel(Panel $panel): Panel
+{
+    return $panel
+        ->plugins([
+            ChangeUserPlugin::make()
+                ->setModalHeading('Another modal heading'),
+        ]);
+}
+```
+You can swap out the modal icon used by updating the `setIcon()`  value.
+
+```php
+use Rmsramos\ChangeUser\ChangeUserPlugin;
+
+public function panel(Panel $panel): Panel
+{
+    return $panel
+        ->plugins([
+            ChangeUserPlugin::make()
+                ->setIcon('heroicon-o-finger-print'),
+        ]);
+}
+```
+
+## Full configuration
+```php
+use Rmsramos\ChangeUser\ChangeUserPlugin;
+
+public function panel(Panel $panel): Panel
+{
+    return $panel
+        ->plugins([
+            ChangeUserPlugin::make()
+                ->showButton(fn () => auth()->user()->id === 1)
+                ->setModalHeading('Another modal heading')
+                ->setIcon('heroicon-o-finger-print'),
+        ]);
+}
+```
 ## Testing
 
 ```bash
