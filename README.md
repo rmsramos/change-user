@@ -1,7 +1,7 @@
 # Filament Change User
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/rmsramos/change-user.svg?style=flat-square)](https://packagist.org/packages/rmsramos/change-user)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/rmsramos/change-user/fix-php-code-styling.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/rmsramos/change-user/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![Fix PHP Code Styling](https://github.com/rmsramos/change-user/actions/workflows/fix-php-code-style-issues.yml/badge.svg)](https://github.com/rmsramos/change-user/actions/workflows/fix-php-code-style-issues.yml)
 [![Total Downloads](https://img.shields.io/packagist/dt/rmsramos/change-user.svg?style=flat-square)](https://packagist.org/packages/rmsramos/change-user/stats)
 
 Filament plugin to change users without having to leave the panel
